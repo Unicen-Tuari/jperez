@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title> Ruleta</title>
+  <link rel="stylesheet" href="estilo.css" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+  <div class="cent">
+    <h1>RULETA "LES JEUX"</h1>
+  </div>
+   <div class="cent">
+     <h2 id="creditos">Creditos = 100</h2>
+   </div>
+   <div class="cent apuesta">
+      <h3>Ingrese su apuesta</h3>
+      <form  class="numeroap" action="" onsubmit="elegirnumero()" method="post">
+        <input type="radio" name="numap" value="0"> 0
+        <input type="radio" name="numap" value="1"> 1
+        <input type="radio" name="numap" value="2"> 2
+        <input type="radio" name="numap" value="3"> 3
+        <input type="radio" name="numap" value="4"> 4
+        <input type="radio" name="numap" value="5"> 5
+        <input type="radio" name="numap" value="6"> 6
+        <input type="radio" name="numap" value="7"> 7
+        <input type="radio" name="numap" value="8"> 8
+        <input type="radio" name="numap" value="9"> 9
+      </form>
+   </div>
+   <div class="numerogan">
+     <p id="numeroganador"> - </p>
+   </div>
+   <div class="cent">
+      <input id="boton" type="button" onclick="tirar()" name="name" value="TIRAR">
+   </div>
+
+
+  <script src="comportamiento.js" charset="utf-8"></script>
+</body>
+</html>
