@@ -1,0 +1,51 @@
+
+.encabezado{
+  background-image:url(Imagenes/fondo.png);
+  position: relative;
+}
+
+
+.barra{
+  background-color: grey;
+  width: 100%;
+  z-index: 1;
+  top: 20px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+
+.barra li{
+  display:inline-block;
+  font-family: Futura,Trebuchet MS,Arial,sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.barra li a {
+    padding-right: 20ex;
+    text-decoration: none;
+    color: white;
+}
+
+.contenido{
+  border-style: dashed;
+  border-color: black;
+  margin-top: 50px;
+}
+
+.ultimo{
+  float: left;
+  width: 78%;
+  height: 800px;
+}
+
+.ofertas{
+  float: right;
+  width: 20%;
+  height: 800px;
+}
+
+.logoof{
+  margin-left: 40px;
+}
