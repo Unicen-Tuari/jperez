@@ -124,18 +124,22 @@ h4 {
   text-decoration: inherit;
 }
 
-.producto td{
+.titulo, .datos, .precio{
   border: 3px dotted white;
   padding: 20px;
   color: white;
   text-align: center;
 }
 
-.producto table{
+
+.descripcion {
   width: 60%;
+  float: left;
   padding-left: 20px;
   padding-top: 20px;
 }
+
+
 
 .producto img{
   float: left;
