@@ -1,0 +1,57 @@
+body{
+  margin: 0;
+  background-color: #267257;
+}
+
+h1{
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 200px;
+}
+
+#paneles{
+  width: 20%;
+  text-align: center;
+  margin-left: 50px;
+  margin-right: 10px;
+  float: left;
+}
+
+.paneljug{
+  margin-top: 100px;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.panel-body{
+  color: black;
+}
+
+#j1{
+  float:left;
+}
+
+#j2{
+  float: right;
+}
+
+.mesa{
+  width: 70%;
+  float: right;
+  margin-top: 100px;
+  margin-right: 50px;
+  text-align: center;
+}
+
+.rojo{
+  background-color: #7B0101;
+}
+
+.negro{
+  background-color: black;
+}
+
+.verde{
+  background-color: #267257;
+}

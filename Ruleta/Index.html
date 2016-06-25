@@ -3,36 +3,107 @@
 <head>
   <meta charset="utf-8">
   <title> Ruleta</title>
-  <link rel="stylesheet" href="estilo.css" media="screen" title="no title" charset="utf-8">
+  <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo.css" media="screen" title="no title" charset="utf-8">
 </head>
 <body>
-  <div class="cent">
-    <h1>RULETA "LES JEUX"</h1>
+  <header>
+    <h1>LES JEAUX</h1>
+  </header>
+  <div id="paneles">
+    <div id="j1">
+      <div class="panel panel-primary paneljug">
+        <div class="panel-heading">Jugador 1</div>
+        <div class="panel-body">
+          <p>Dinero: $100</p>
+        </div>
+      </div>
+
+      <div class="btn-group boton-ap" role="group">
+        <button type="button" class="btn btn-default">Apostar Jugador 1</button>
+      </div>
+    </div>
+
+    <div id="j2">
+      <div class="panel panel-primary paneljug">
+        <div class="panel-heading negrita">Jugador 2</div>
+        <div class="panel-body">
+          <p class="negrita">Dinero: $100</p>
+        </div>
+      </div>
+      <div class="btn-group boton-ap" role="group">
+        <button type="button" class="btn btn-default">Apostar Jugador 2</button>
+      </div>
+    </div>
   </div>
-   <div class="cent">
-     <h2 id="creditos">Creditos = 100</h2>
-   </div>
-   <div class="cent apuesta">
-      <h3>Ingrese su apuesta</h3>
-      <form  class="numeroap" action="" onsubmit="elegirnumero()" method="post">
-        <input type="radio" name="numap" value="0"> 0
-        <input type="radio" name="numap" value="1"> 1
-        <input type="radio" name="numap" value="2"> 2
-        <input type="radio" name="numap" value="3"> 3
-        <input type="radio" name="numap" value="4"> 4
-        <input type="radio" name="numap" value="5"> 5
-        <input type="radio" name="numap" value="6"> 6
-        <input type="radio" name="numap" value="7"> 7
-        <input type="radio" name="numap" value="8"> 8
-        <input type="radio" name="numap" value="9"> 9
-      </form>
-   </div>
-   <div class="numerogan">
-     <p id="numeroganador"> - </p>
-   </div>
-   <div class="cent">
-      <input id="boton" type="button" onclick="tirar()" name="name" value="TIRAR">
-   </div>
+
+
+
+  <div class="mesa">
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default verde">0</button>
+      </div>
+    </div>
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default rojo">1</button>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default negro">2</button>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default rojo">3</button>
+      </div>
+    </div>
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default negro">4</button>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default rojo">5</button>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default rojo">6</button>
+      </div>
+    </div>
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default negro">7</button>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default rojo">8</button>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default negro">9</button>
+      </div>
+    </div>
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default verde">PARES</button>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default verde">IMPARES</button>
+      </div>
+    </div>
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default verde">MENOR</button>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default verde">MAYOR</button>
+      </div>
+    </div>
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default negro">NEGRO</button>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-default rojo">ROJO</button>
+      </div>
+    </div>
+  </div>
+
 
 
   <script src="comportamiento.js" charset="utf-8"></script>
