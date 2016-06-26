@@ -1,28 +1,23 @@
 "use strict";
 
-var apuj1 = [];
-var apuj2 = [];
-
 /* cracion de objetos */
 
 function jugador(){
+  var apues= [];
   return {
-    dinero : $100,
+    dinero : 100,
+    apuestas : apues,
     getdinero : function(){
       return this.dinero;
     },
     modificredito : function(variacion){
       this.dinero += variacion;
-    }
-  }
-};
-
-function apuesta(num){
-  return{
-    numero : num,
-    valor : 0,
-    aumentar : function(){
-      this.valor++;
+    },
+    getapuesta : function() {
+      return this.apuesta;
+    },
+    añadirapuesta : function(num){
+      this.apuestas[num]++;
     }
   }
 };
@@ -43,10 +38,10 @@ function numero(val){
       else {
         return null;
       }
-    }
+    },
     esmenor : function(){
       if (this.valor !=0){
-        if (this.valor =< 5) {
+        if (this.valor < 6) {
           return true;
         }
         else {
@@ -56,7 +51,7 @@ function numero(val){
       else {
         return null;
       }
-    }
+    },
     esrojo : function(){
       if (this.valor !=0) {
         for (var i = 0; i < rojos.length; i++) {
@@ -81,6 +76,25 @@ function tablero(){
     arreglo.push = new numero(i);
   }
   return{
-    arreglo : table;
+    arreglo : table
   }
 };
+
+
+function apostar (num){
+  jugadoractual.añadirapuesta(num);
+}
+
+function cambiarjug (){
+  if (jugadoractual === Mario) {
+    jugadoractual = Luigi;
+  }
+  else {
+    jugadoractual = Mario;
+  }
+}
+
+
+var Mario= new jugador;
+var Luigi= new jugador;
+var jugadoractual = Mario;
