@@ -182,7 +182,7 @@ function esganador (jugador,esgan){
   for (var i = 0; i < apu.length; i++) {
     if (i === esgan.getvalor()) {
       if ((i % 4 === 0) && (0 < i)) {
-        pagar (jugador,apu[i]*1.5);
+        pagar (jugador,apu[i]*0.75);
       }
       else {
         pagar (jugador,apu[i]);

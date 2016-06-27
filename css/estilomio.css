@@ -1,0 +1,17 @@
+nav li:hover{
+  background-color: #474040;
+  font-weight: bold;
+}
+
+#logo{
+  width: 100%;
+  padding: 0px;
+}
+
+body{
+  background-color: #F37E2B;
+}
+
+.encabezado{
+  margin: 0px !important;
+}
