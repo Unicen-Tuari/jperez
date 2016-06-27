@@ -3,7 +3,7 @@
 /* cracion de objetos */
 
 function jugador(){
-  var apues= [];
+  var apues= [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
   return {
     dinero : 100,
     apuestas : apues,
@@ -80,21 +80,53 @@ function tablero(){
   }
 };
 
+/*creo funciones con acciones*/
+
+function mostrar (){
+    var apostado = "";
+    for (var i = 0; i < jugadoractual.apuestas.length; i++) {
+      if (jugadoractual.apuestas[i] != 0) {
+        apostado += i + '= $' + jugadoractual.apuestas[i] + '<br />';
+      }
+    }
+    if (jugadoractual === Mario) {
+      $("#apuestaj1").html(apostado);
+    }
+    else {
+      $("#apuestaj2").html(apostado);
+    }
+}
+
 
 function apostar (num){
   jugadoractual.añadirapuesta(num);
+  jugadoractual.modificredito(-1);
+  mostrar();
 }
+
 
 function cambiarjug (){
+
   if (jugadoractual === Mario) {
+    $("#j1 .paneljug").css("box-shadow", "0px 0px 0px white");
     jugadoractual = Luigi;
+    $("#j2 .paneljug").css("box-shadow", "0px 0px 40px white");
   }
   else {
+    $("#j2 .paneljug").css("box-shadow", "0px 0px 0px white");
     jugadoractual = Mario;
+    $("#j1 .paneljug").css("box-shadow", "0px 0px 40px white");
   }
 }
 
+function ganador(){
+  return Math.floor( Math.random ()*11);
+}
 
+/* addafagadgagdgdas*/
 var Mario= new jugador;
 var Luigi= new jugador;
 var jugadoractual = Mario;
+$("#j1 .paneljug").css("box-shadow", "0px 0px 40px white");
+
+$("#cambiar").on("click", cambiarjug);

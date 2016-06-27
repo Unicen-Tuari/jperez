@@ -53,12 +53,18 @@ h1{
 
 .rojo, #rojo{
   background-color: #7B0101;
+  text-shadow: 0px 0px 10px red;
 }
 
 .negro, #negro{
   background-color: black;
+  text-shadow: 0px 0px 10px black;
 }
 
 .verde{
   background-color: #267257;
+}
+
+.separador, footer{
+  clear: both;
 }
