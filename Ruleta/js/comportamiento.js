@@ -1,9 +1,9 @@
 "use strict";
 
-/* cracion de objetos */
+/* ----------------------------------------------- creacion de objetos ------------------------------------------------------------------------------- */
 
 function jugador(){
-  var apues= [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+  var apues= [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
   return {
     dinero : 100,
     apuestas : apues,
@@ -80,33 +80,58 @@ function tablero(){
   }
 };
 
-/*creo funciones con acciones*/
+/*-------------------------------------------------------------------------creacion funciones con acciones--------------------------------------------------*/
 
-function mostrar (){
+function mostrar (){ /*muestra la apuesta y el dinero que va quedando*/
     var apostado = "";
     for (var i = 0; i < jugadoractual.apuestas.length; i++) {
       if (jugadoractual.apuestas[i] != 0) {
-        apostado += i + '= $' + jugadoractual.apuestas[i] + '<br />';
+        if (i > 10) {
+          var nomap = "";
+          if (i === 11) {
+            nomap= "Pares";
+          }
+          else if (i === 12) {
+            nomap= "Impares";
+          }
+          else if (i === 13) {
+            nomap = "Menor";
+          }
+          else if (i === 14) {
+            nomap = "Mayor";
+          }
+          else if (i === 15) {
+            nomap = "Negro"
+          }
+          else if (i === 16) {
+            nomap = "rojo";
+          }
+          apostado += nomap + '= $' + jugadoractual.apuestas[i] + '<br />';
+        }
+        else {
+          apostado += i + '= $' + jugadoractual.apuestas[i] + '<br />';
+        }
       }
     }
     if (jugadoractual === Mario) {
+      $("#dineroj1").html("Dinero: $" + jugadoractual.getdinero());
       $("#apuestaj1").html(apostado);
     }
     else {
+      $("#dineroj2").html("Dinero: $" + jugadoractual.getdinero());
       $("#apuestaj2").html(apostado);
     }
 }
 
 
-function apostar (num){
+function apostar (num){/*apuesta al numero pasado (negro,rojo,par,impar,mayor,menor estan representados con numeros) y quita el dinero correspondiente*/
   jugadoractual.añadirapuesta(num);
   jugadoractual.modificredito(-1);
   mostrar();
 }
 
 
-function cambiarjug (){
-
+function cambiarjug (){ /*cambia el turno del jugador quitando y dando permiso de apuesta*/
   if (jugadoractual === Mario) {
     $("#j1 .paneljug").css("box-shadow", "0px 0px 0px white");
     jugadoractual = Luigi;
@@ -119,14 +144,31 @@ function cambiarjug (){
   }
 }
 
-function ganador(){
+function ganador(){ /*calcula numero ganador*/
   return Math.floor( Math.random ()*11);
 }
 
-/* addafagadgagdgdas*/
+function esganador(){
+
+}
+
+function vincular(i){ /*vincula los botones del tablero con su respectiva apuesta*/
+   botones[i].onclick = function(){apostar(i)};
+}
+
+/* -----------------------------------------------------------------------eventos---------------------------------------------------*/
 var Mario= new jugador;
 var Luigi= new jugador;
 var jugadoractual = Mario;
 $("#j1 .paneljug").css("box-shadow", "0px 0px 40px white");
 
+
+
+
+
 $("#cambiar").on("click", cambiarjug);
+
+var botones = $(".mesa button");
+for (var i = 0; i < botones.length; i++) {
+  vincular(i);
+}

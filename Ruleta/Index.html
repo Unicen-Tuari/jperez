@@ -12,13 +12,15 @@
     <h1>LE JEUX</h1>
   </header>
 
+
+
   <div id="paneles">
 
     <div id="j1">
       <div class="panel panel-primary paneljug">
         <div class="panel-heading" >Mario</div>
         <div class="panel-body">
-          <p>Dinero: $100</p>
+          <p id="dineroj1">Dinero: $100</p>
           <p>Apuestas: </p>
           <div id="apuestaj1"></div>
         </div>
@@ -29,7 +31,7 @@
       <div class="panel panel-primary paneljug">
         <div class="panel-heading">Luigi</div>
         <div class="panel-body">
-          <p>Dinero: $100</p>
+          <p id="dineroj2">Dinero: $100</p>
           <p>Apuestas: </p>
           <div id="apuestaj2"></div>
         </div>
@@ -46,26 +48,26 @@
   <div class="mesa">
     <div class="btn-group btn-group-justified" role="group" aria-label="...">
       <div class="btn-group" role="group">
-        <button type="button" class="btn btn-default verde numero">0</button>
+        <button type="button" class="btn btn-default verde numero" >0</button>
       </div>
     </div>
     <div class="btn-group btn-group-justified" role="group" aria-label="...">
       <div class="btn-group" role="group">
-        <button type="button" class="btn btn-default rojo numero">1</button>
+        <button type="button" class="btn btn-default rojo numero" >1</button>
       </div>
       <div class="btn-group" role="group">
-        <button type="button" class="btn btn-default negro numero">2</button>
+        <button type="button" class="btn btn-default negro numero" >2</button>
       </div>
       <div class="btn-group" role="group">
-        <button type="button" class="btn btn-default rojo numero">3</button>
+        <button type="button" class="btn btn-default rojo numero" >3</button>
       </div>
     </div>
     <div class="btn-group btn-group-justified" role="group" aria-label="...">
       <div class="btn-group" role="group">
-        <button type="button" class="btn btn-default negro numero">4</button>
+        <button type="button" class="btn btn-default negro numero" >4</button>
       </div>
       <div class="btn-group" role="group">
-        <button type="button" class="btn btn-default rojo numero">5</button>
+        <button type="button" class="btn btn-default rojo numero" >5</button>
       </div>
       <div class="btn-group" role="group">
         <button type="button" class="btn btn-default rojo numero">6</button>
@@ -73,18 +75,18 @@
     </div>
     <div class="btn-group btn-group-justified" role="group" aria-label="...">
       <div class="btn-group" role="group">
-        <button type="button" class="btn btn-default negro numero">7</button>
+        <button type="button" class="btn btn-default negro numero" >7</button>
       </div>
       <div class="btn-group" role="group">
-        <button type="button" class="btn btn-default rojo numero">8</button>
+        <button type="button" class="btn btn-default rojo numero" >8</button>
       </div>
       <div class="btn-group" role="group">
-        <button type="button" class="btn btn-default negro numero">9</button>
+        <button type="button" class="btn btn-default negro numero" >9</button>
       </div>
     </div>
     <div class="btn-group btn-group-justified" role="group" aria-label="...">
       <div class="btn-group" role="group">
-        <button type="button" class="btn btn-default rojo numero">10</button>
+        <button type="button" class="btn btn-default rojo numero" >10</button>
       </div>
     </div>
     <div class="btn-group btn-group-justified" role="group" aria-label="...">
@@ -112,6 +114,15 @@
       </div>
     </div>
   </div>
+
+  <div class="separador">  </div>
+
+  <div class="btn-group btn-group-justified" role="group" aria-label="...">
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-default center-block" id="tirar">TIRAR</button>
+    </div>
+  </div>
+
   <footer></footer>
 
 
