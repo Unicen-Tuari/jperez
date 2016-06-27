@@ -75,5 +75,9 @@ h1{
 #tirar{
   margin-top: 30px;
   font-size: 50px;
+}
 
+#paneles img{
+  width: 30px;
+  height: 45px; 
 }

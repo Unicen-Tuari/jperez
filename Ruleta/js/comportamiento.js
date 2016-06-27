@@ -2,30 +2,30 @@
 
 /* ----------------------------------------------- creacion de objetos ------------------------------------------------------------------------------- */
 
-function jugador(){
+function jugador(){/*objeto jugador*/
   var apues= [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
   return {
     dinero : 100,
     apuestas : apues,
-    getdinero : function(){
+    getdinero : function(){/*me da la cantidad de dinero del jugador*/
       return this.dinero;
     },
-    modificredito : function(variacion){
+    modificredito : function(variacion){/*modifica el credito o dinero del jugador*/
       this.dinero += variacion;
     },
-    getapuesta : function() {
+    getapuesta : function() {/*me da el arreglo con todas las apuestas del jugador*/
       return this.apuestas;
     },
-    añadirapuesta : function(num){
+    añadirapuesta : function(num){/*me le suma 1 al numero que apueste, salvo q responda a la consigna y ahi suma 2*/
       this.apuestas[num]++;
     },
-    vaciarapuesta : function(){
+    vaciarapuesta : function(){/*deja en 0 todas las apuestas del jugador*/
       this.apuestas = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
     }
   }
 };
 
-function numero(val){
+function numero(val){/* objeto numero*/
   var rojos = $(".rojo");
   var negros= $(".negro");
   return{
@@ -46,7 +46,7 @@ function numero(val){
         return null;
       }
     },
-    esmenor : function(){
+    esmenor : function(){/*se fija si el vlaor del numero es menor a 6 que corresponde a la mitad de la ruleta*/
       if (this.valor !=0){
         if (this.valor < 6) {
           return true;
@@ -59,7 +59,7 @@ function numero(val){
         return null;
       }
     },
-    esrojo : function(){
+    esrojo : function(){ /*se fija si el numero se encuentra dentro de los que tienen la clase rojo*/
       var es = "";
       if (this.valor != 0) {
         for (var i = 0; i < rojos.length; i++) {
@@ -136,8 +136,16 @@ function mostrar (jugador){ /*muestra la apuesta y el dinero que va quedando*/
 
 function apostar (num){/*apuesta al numero pasado (negro,rojo,par,impar,mayor,menor estan representados con numeros) y quita el dinero correspondiente*/
   if (jugadoractual.getdinero() >  0) {
-    jugadoractual.añadirapuesta(num);
-    jugadoractual.modificredito(-1);
+    if ((num % 4 === 0) && (0 < num) && (num < 11)) {
+      jugadoractual.añadirapuesta(num);
+      jugadoractual.modificredito(-1);
+      jugadoractual.añadirapuesta(num);
+      jugadoractual.modificredito(-1);
+    }
+    else {
+      jugadoractual.añadirapuesta(num);
+      jugadoractual.modificredito(-1);
+    }
     mostrar(jugadoractual);
   }
   else {
@@ -173,7 +181,12 @@ function esganador (jugador,esgan){
   var apu= jugador.getapuesta();
   for (var i = 0; i < apu.length; i++) {
     if (i === esgan.getvalor()) {
-      pagar (jugador,apu[i]);
+      if ((i % 4 === 0) && (0 < i)) {
+        pagar (jugador,apu[i]*1.5);
+      }
+      else {
+        pagar (jugador,apu[i]);
+      }
     }
     else if (i === 11){
       if (esgan.espar()) {
