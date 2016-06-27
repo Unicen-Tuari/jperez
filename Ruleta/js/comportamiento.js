@@ -223,12 +223,28 @@ function esganador (jugador,esgan){
   mostrar(jugador);
 }
 
+function aposto (jugador){
+  var apos = false;
+  var apojug = jugador.getapuesta()
+  for (var i = 0; i < apojug.length; i++) {
+    if (apojug[i] != 0) {
+      apos = true;
+    }
+  }
+  return apos;
+}
 
 function songanadores(){
-  var esgan = new numero(ganador());
-  alert("NUMERO GANADOR:  " + esgan.getvalor());
-  esganador(Mario,esgan);
-  esganador(Luigi,esgan);
+  if ((aposto(Mario)) || (aposto(Luigi))) {
+      var esgan = new numero(ganador());
+      alert("NUMERO GANADOR:  " + esgan.getvalor());
+      esganador(Mario,esgan);
+      esganador(Luigi,esgan);
+  }
+  else {
+    alert("AUN NO HAY APUESTAS")
+  }
+
 }
 
 function vincular(i){ /*vincula los botones del tablero con su respectiva apuesta*/
