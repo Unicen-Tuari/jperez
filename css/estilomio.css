@@ -1,17 +1,21 @@
-nav li:hover ,nav li a:hover{
+
+nav li:hover{
   background-color: #474040;
+}
+
+.dropdown-menu li a:hover{
   font-weight: bold;
 }
 
 #logo{
   width: 100%;
-  padding: 0px;
 }
 
 body{
   background-color: #F37E2B;
 }
 
-.encabezado{
+.encabezado, .barra, #logo{
   margin: 0px !important;
+  padding: 0px !important;
 }
