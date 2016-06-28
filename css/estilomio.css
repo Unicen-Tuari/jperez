@@ -1,4 +1,4 @@
-nav li:hover{
+nav li:hover ,nav li a:hover{
   background-color: #474040;
   font-weight: bold;
 }
