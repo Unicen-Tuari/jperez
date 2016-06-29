@@ -34,6 +34,7 @@ function crearTabla(prod) {
     fila += "<td> <a href='#' class="+prod.information[i]["thing"].codigo+">" + prod.information[i]["thing"].codigo + "</a> </td>";
     fila += "<td>" + prod.information[i]["thing"].descripcion + "</td>";
     fila += "<td>" + prod.information[i]["thing"].precio + "</td>";
+    fila += "<td><input class= 'btn eliminar' type='button' value='eliminar'></input>";
     fila += "</tr>";
   }
   $("#tabla").html(fila);
