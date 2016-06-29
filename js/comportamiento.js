@@ -42,7 +42,7 @@ function deleteInformationByItem(item) {
     method:"DELETE",
     success: function(resultData){
       console.log(resultData);
-      getInformationByGroup();
+      mostrarprod();
     },
     error:function(jqxml, status, errorThrown){
       alert('Error!');
