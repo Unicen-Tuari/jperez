@@ -7,7 +7,7 @@ function Mostrar(data) {
     cargarprod();
   })
 
-  $(".guitarrasx").on("click" = function(){
+  $(".guitarrasx").on("click", function(){
     CargarAjax("html/guitarraSX.html")
   })
   mostrarprod()
