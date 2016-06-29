@@ -6,10 +6,12 @@ function Mostrar(data) {
   $("#cargar").on("click", function(){
     cargarprod();
   })
-
   $(".guitarrasx").on("click", function(){
     CargarAjax("html/guitarraSX.html")
   })
+  $(".guitarrasx")[0].onclick= function(){
+    CargarAjax("html/guitarraSX.html")
+  }
   mostrarprod()
 }
 
