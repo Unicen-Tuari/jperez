@@ -33,9 +33,9 @@ function cargarprod(){
       alert("FALTAN CARGAR DATOS")
     }
   }
-  prod.codigo = inputs[0].value;
-  prod.descripcion = inputs[1].value;
-  prod.precio = inputs[2].value;
+  prod.codigo = datos[0].value;
+  prod.descripcion = datos[1].value;
+  prod.precio = datos[2].value;
   var informacion = {
     "group": grupo,
     "thing": prod
