@@ -11,15 +11,13 @@ function MostrarError(jqXHR, textStatus, errorThrown) {
 }
 
 function CargarAjax(link) {
-  $.ajax(
-    {
-      type:"GET",
-      url: link,
-      success: Mostrar,
-      dataType: "html",
-      error: MostrarError
-    }
-  );
+  $.ajax({
+    type:"GET",
+    url: link,
+    success: Mostrar,
+    dataType: "html",
+    error: MostrarError
+    });
 }
 
 function cargarprod(){
@@ -49,26 +47,15 @@ function cargarprod(){
     contentType: "application/json; charset=utf-8",
     url: "http://web-unicen.herokuapp.com/api/create",
     success: function(resultData){
-      $("#guardarAlert").removeClass("alert-danger")
-      $("#guardarAlert").addClass("alert-success")
-      //como le dimos dataType:"JSON" el resultData ya es un objeto
-      //la estructura que devuelve es especifica de cada servicio que usemos
-      $("#guardarAlert").html("Guardado");
       console.log(resultData.information);
-      getInformationByGroup();
+      alert("Se cargo el producto con exito!");
     },
     error:function(jqxml, status, errorThrown){
       console.log(errorThrown);
-      $("#guardarAlert").addClass("alert-danger");
-      $("#guardarAlert").html("Error por favor intente mas tarde");
+      alert("Problema al cargar producto")
     }
-  },
-  $("#guardarAlert").html("Cargando...")
-);
+  });
 }
-
-
-
 
 
 
@@ -90,4 +77,7 @@ $("#contacto").on("click", function(){
 
 $("#guitarras").on("click", function(){
   CargarAjax("html/guitarras.html")
+  $("#cargar").on("click", function(){
+    cargarprod();
+  })
 })
