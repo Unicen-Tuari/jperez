@@ -64,7 +64,7 @@ function crearTabla(prod) {
   $("#tabla").html(fila);
   var botonesEliminar = $(".eliminar");
   for (var i = 0; i < botonesEliminar.length; i++) {
-    asignarEliminar(i, resultData.information[i]['_id']);
+    asignarEliminar(i, prod.information[i]['_id']);
   }
 }
 
