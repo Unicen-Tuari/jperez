@@ -72,3 +72,13 @@ p{
 .centrado{
   text-align: center;
 }
+
+.conborde{
+  border-color: black;
+  border-style: double;
+  border-width: 3px;
+}
+
+.descrip{
+  font-weight: bold;
+}
