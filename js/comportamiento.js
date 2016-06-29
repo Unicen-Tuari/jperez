@@ -10,6 +10,7 @@ function Mostrar(data) {
   $(".guitarrasx").on("click", function(){
     CargarAjax("html/guitarraSX.html")
   })
+  mostrarprod()
 }
 
 function MostrarError(jqXHR, textStatus, errorThrown) {
