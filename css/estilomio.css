@@ -21,8 +21,6 @@ nav li:hover{
 }
 
 #contenido{
-    /*margin-left: 50px;
-    margin-right: 50px;*/
     background-color: white;
     border-radius: 6px 6px 6px 6px;
 }
@@ -49,5 +47,13 @@ h3, .rojo{
 
 .comentario{
   text-align: center;
+}
 
+.carousel .item > img {
+    display: inline-block;
+}
+
+
+.carousel-inner {
+  text-align: center;
 }
