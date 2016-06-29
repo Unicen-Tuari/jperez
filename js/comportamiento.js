@@ -5,11 +5,11 @@ function Mostrar(data) {
   $("#articulo").html(data);
   $("#cargar").on("click", function(){
     cargarprod();
+    mostrarprod()
   })
   $(".guitarrasx").on("click", function(){
     CargarAjax("html/guitarraSX.html")
   })
-  mostrarprod()
 }
 
 function MostrarError(jqXHR, textStatus, errorThrown) {
