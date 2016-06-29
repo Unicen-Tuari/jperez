@@ -68,8 +68,6 @@ function crearTabla(prod) {
   }
 }
 
-
-
 function mostrarprod(){
   var grupo = 47;
   $.ajax({
