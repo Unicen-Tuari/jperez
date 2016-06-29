@@ -29,6 +29,10 @@ $(document).ready(function(){
   }
 )
 
+$("#principal").on("click", function(){
+  CargarAjax("html/principal.html")
+})
+
 $("#quienes").on("click", function(){
   CargarAjax("html/quienes.html")
 })
