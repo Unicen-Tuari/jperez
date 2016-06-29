@@ -23,6 +23,24 @@ function CargarAjax(link) {
     });
 }
 
+function mostrarprod(){
+  var grupo = 47;
+  $.ajax({
+    method: "GET",
+    dataType: 'JSON',
+    url: "http://web-unicen.herokuapp.com/api/group/" + grupo,
+    success:function (prod){
+      crearTabla(prod);
+    },
+    error:function(jqxml, status, errorThrown){
+      console.log(errorThrown);
+    }
+  });
+}
+
+
+
+
 function cargarprod(){
   var grupo = 47;
   var prod = {
@@ -51,14 +69,17 @@ function cargarprod(){
     url: "http://web-unicen.herokuapp.com/api/create",
     success: function(resultData){
       console.log(resultData.information);
-      alert("Se cargo el producto con exito!");
     },
     error:function(jqxml, status, errorThrown){
       console.log(errorThrown);
-      alert("Problema al cargar producto")
     }
   });
 }
+
+
+
+
+
 
 
 
