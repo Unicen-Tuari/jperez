@@ -6,7 +6,7 @@ function Mostrar(data) {
   $("#cargar").on("click", function(){
     cargarprod();
   })
-  $("#guitarrasx").on("click",function(){
+  $(".guitarrasx").on("click",function(){
     CargarAjax("html/guitarraSX.html")
   })
   mostrarprod()
@@ -31,7 +31,7 @@ function crearTabla(prod) {
   var fila = "";
   for (var i = 0; i < prod.information.length; i++) {
     fila += "<tr>";
-    fila += "<td> <a id="+prod.information[i]["thing"].codigo+">" + prod.information[i]["thing"].codigo + "</a> </td>";
+    fila += "<td> <a class="+prod.information[i]["thing"].codigo+">" + prod.information[i]["thing"].codigo + "</a> </td>";
     fila += "<td>" + prod.information[i]["thing"].descripcion + "</td>";
     fila += "<td>" + prod.information[i]["thing"].precio + "</td>";
     fila += "</tr>";
