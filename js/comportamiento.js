@@ -2,12 +2,12 @@
 
 // código de inicialización de eventos
 function Mostrar(data) {
-  $("#infoamostrar").html(data);
+  $("#articulo").html(data);
 }
 
 function MostrarError(jqXHR, textStatus, errorThrown) {
   alert("La pagina no se puede cargar");
-  $("#infoamostrar").html("servidor caido");
+  $("#articulo").html("servidor caido");
 }
 
 function CargarAjax(link) {
