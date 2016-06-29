@@ -3,6 +3,9 @@
 // código de inicialización de eventos
 function Mostrar(data) {
   $("#articulo").html(data);
+  $("#cargar").on("click", function(){
+    cargarprod();
+  })
 }
 
 function MostrarError(jqXHR, textStatus, errorThrown) {
@@ -77,7 +80,4 @@ $("#contacto").on("click", function(){
 
 $("#guitarras").on("click", function(){
   CargarAjax("html/guitarras.html")
-  $("#cargar").on("click", function(){
-    cargarprod();
-  })
 })
