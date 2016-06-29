@@ -24,7 +24,8 @@ function CargarAjax(link) {
 
 
 
-$(document).ready(function(){
+/*$(document).ready(function(){
   CargarAjax("html/principal.html");
   }
 )
+*/
