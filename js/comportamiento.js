@@ -28,6 +28,29 @@ function CargarAjax(link) {
     });
 }
 
+function asignarEliminar(i, id){
+  var boton = $(".eliminar")[i];
+  boton.onclick = function(){
+    deleteInformationByItem(id);
+  }
+}
+
+function deleteInformationByItem(item) {
+  var id=item;
+  $.ajax({
+    url:"http://web-unicen.herokuapp.com/api/delete/" + id,
+    method:"DELETE",
+    success: function(resultData){
+      console.log(resultData);
+      getInformationByGroup();
+    },
+    error:function(jqxml, status, errorThrown){
+      alert('Error!');
+      console.log(errorThrown);
+    }
+  });
+}
+
 function crearTabla(prod) {
   var fila = "";
   for (var i = 0; i < prod.information.length; i++) {
@@ -39,6 +62,10 @@ function crearTabla(prod) {
     fila += "</tr>";
   }
   $("#tabla").html(fila);
+  var botonesEliminar = $(".eliminar");
+  for (var i = 0; i < botonesEliminar.length; i++) {
+    asignarEliminar(i, resultData.information[i]['_id']);
+  }
 }
 
 
