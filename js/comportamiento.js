@@ -9,9 +9,6 @@ function Mostrar(data) {
   $(".guitarrasx").on("click", function(){
     CargarAjax("html/guitarraSX.html")
   })
-  $(".guitarrasx")[0].onclick = function(){
-    CargarAjax("html/guitarraSX.html")
-  }
   mostrarprod()
 }
 
@@ -94,6 +91,7 @@ function cargarprod(){
       console.log(errorThrown);
     }
   });
+  mostrarprod();
 }
 
 
