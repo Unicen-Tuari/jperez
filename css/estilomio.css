@@ -82,3 +82,7 @@ p{
 .descrip{
   font-weight: bold;
 }
+
+.tabla{
+  overflow: scroll;
+}
