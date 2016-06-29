@@ -25,6 +25,6 @@ function CargarAjax(link) {
 
 
 $(document).ready(function(){
-  CargarAjax("../html/principal.html");
+  CargarAjax("html/principal.html");
   }
 )
