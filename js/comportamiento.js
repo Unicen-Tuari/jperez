@@ -26,6 +26,20 @@ function CargarAjax(link) {
     });
 }
 
+function crearTabla(prod) {
+  var fila = "";
+  for (var i = 0; i < prod.information.length; i++) {
+    fila += "<tr>";
+    fila += "<td> <a id="+prod.information[i]["thing"].codigo+">" + prod.information[i]["thing"].codigo + "</a> </td>";
+    fila += "<td>" + prod.information[i]["thing"].descripcion + "</td>";
+    fila += "<td>" + prod.information[i]["thing"].precio + "</td>";
+    fila += "</tr>";
+  }
+  $("#tabla").html(fila);
+}
+
+
+
 function mostrarprod(){
   var grupo = 47;
   $.ajax({
@@ -40,7 +54,6 @@ function mostrarprod(){
     }
   });
 }
-
 
 
 
@@ -77,6 +90,7 @@ function cargarprod(){
       console.log(errorThrown);
     }
   });
+  mostrarprod()
 }
 
 
