@@ -39,6 +39,7 @@ h1 {
 
 h3, .rojo{
   color: red;
+  text-shadow: 0px 0px 20px white;
 }
 
 .item{
@@ -56,4 +57,8 @@ h3, .rojo{
 
 .carousel-inner {
   text-align: center;
+}
+
+a:hover{
+  text-shadow: 0px 0px 20px red;
 }
